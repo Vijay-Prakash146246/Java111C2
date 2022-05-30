@@ -11,6 +11,7 @@ private int roll;
 private String name;
 private String address;
 private int marks;
+
 public int getRoll() {
 	return roll;
 }
@@ -60,9 +61,29 @@ class Main
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter Number of Student");
 		int num = s.nextInt();
+		Student [] arr= new Student[num];
+		/*
+		 * private int roll;
+           private String name;
+           private String address;
+           private int marks;
+		 * */
+				
 		for(int i=1;i<=num;i++)
 		{
-			
-		}
+			Student s1 = new Student();
+			System.out.println("Enter Student "+i+" Details ");
+			System.out.println("Enter Student Address ");
+			String Add1 = s.nextLine();
+			s1.setAddress(Add1);
+			System.out.println("Enter Student RollNo ");
+			int roll=s.nextInt();
+			s1.setRoll(roll);
+			System.out.println("Enter Student marks ");
+			int mark=s.nextInt();
+			s1.setMarks(mark);
+			System.out.println("Enter Student name ");
+			String  name=s.next();
+			s1.setName(name);
 	}
 }
