@@ -66,22 +66,35 @@ class Demo
            private int marks;
 		 * */
 				
-		for(int i=1;i<=num;i++)
+		for(int i=0;i<num;i++)
 		{
-			Student s1 = new Student();
+			arr[i] = new Student(); //this is mandatory 
 			System.out.println("Enter Student "+i+" Details ");
 			System.out.println("Enter Student Address ");
 			String Add1 = s.nextLine();
-			s1.setAddress(Add1);
+			s.nextLine();;
+			arr[i].setAddress(Add1);//assign the element for each and every element 
 			System.out.println("Enter Student RollNo ");
 			int roll=s.nextInt();
-			s1.setRoll(roll);
+			arr[i].setRoll(roll);
 			System.out.println("Enter Student marks ");
 			int mark=s.nextInt();
-			s1.setMarks(mark);
+			arr[i].setMarks(mark);
 			System.out.println("Enter Student name ");
 			String  name=s.next();
-			s1.setName(name);
-	}
+			arr[i].setName(name);
+		}
+		double sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.println("Details of "+(i+1)+" Student " );
+			System.out.println("Address Of Student "+arr[i].getAddress());
+			System.out.println("Marks Of Student "+arr[i].getMarks());
+			System.out.println("Name Of Student "+arr[i].getName());
+			System.out.println("Roll-No Of Student "+arr[i].getRoll());
+			sum+=arr[i].getMarks();
+		}
+		double avg=sum/arr.length;
+		System.out.println("Average Mark's is "+avg);
 }
 }
